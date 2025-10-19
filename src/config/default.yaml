@@ -1,0 +1,21 @@
+# Model & Data
+model_name: "gpt2-medium"
+task_name: "glue-mrpc"
+max_seq_length: 128
+train_batch_size: 32
+eval_batch_size: 32
+
+learning_rate: 3e-5
+num_train_epochs: 3
+
+# PEFT axes options
+ranks: [1,2,4,8,16]
+bitwidths: [2,4,8]
+sparsities: [0.0,0.5,0.75,0.9]
+
+# Hardware & Logging
+device: "cuda"
+seed: 42
+output_dir: "./output"
+logging_steps: 100
+save_steps: 500
